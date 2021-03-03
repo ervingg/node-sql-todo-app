@@ -18,7 +18,7 @@ new Vue({
          .then(todos => {
             this.todos = todos;
          })
-         .catch(e => console.log(e))
+         .catch(e => console.log(e));
    },
    methods: {
       addTodo() {
@@ -28,9 +28,7 @@ new Vue({
          }
          fetch('/api/todo/', {
                method: 'POST',
-               headers: {
-                  'Content-Type': 'application/json'
-               },
+               headers: {'Content-Type': 'application/json'},
                body: JSON.stringify({
                   title
                })
@@ -42,7 +40,7 @@ new Vue({
                this.todos.push(todo)
                this.todoTitle = ''
             })
-            .catch(e => console.log(e))
+            .catch(e => console.log(e));
       },
       removeTodo(id) {
          fetch('/api/todo/' + id, {
@@ -56,9 +54,7 @@ new Vue({
       completeTodo(id) {
          fetch('/api/todo/' + id, {
             method: 'PUT',
-            headers: {
-               'Content-Type': 'application/json'
-            },
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({done: true})
          })
             .then(res => res.json())

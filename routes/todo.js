@@ -1,5 +1,4 @@
 const {Router} = require('express');
-const { json } = require('sequelize/types');
 const Todo = require('../models/todo');
 const router = Router();
 
